@@ -4,11 +4,11 @@ import 'package:foodbank_app/ui/core/ui/fb_gap.dart';
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({
     super.key,
-    required Error error,
+    required String error,
     required Function() onReload,
   }) : _error = error, _onReload = onReload;
 
-  final Error _error;
+  final String _error;
   final Function() _onReload;
 
   @override
@@ -22,7 +22,7 @@ class ErrorScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(_error.toString(), style: TextStyle(color: colours.error)),
+            Text(_error, style: TextStyle(color: colours.error)),
             const FbGap(),
             ElevatedButton.icon(
               onPressed: _onReload,

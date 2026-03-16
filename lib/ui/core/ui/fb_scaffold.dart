@@ -39,7 +39,7 @@ class FbScaffold<T> extends ConsumerWidget {
 
     final widget = state.when(
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => ErrorScreen(error: error as Error, onReload: onLoad),
+      error: (error, _) => ErrorScreen(error: error.toString(), onReload: onLoad),
       data: (data) => _isEmpty(data)
           ? EmptyScreen(label: 'items', onReload: onLoad)
           : builder(data),
