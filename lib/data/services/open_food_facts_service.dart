@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:openfoodfacts/openfoodfacts.dart';
 
@@ -37,7 +38,15 @@ class OpenFoodFactsService extends OpenFoodFactsServiceInterface {
         productTypeFilter: ProductTypeFilter.all,
       );
 
+      if (kDebugMode) {
+        print('[OpenFoodFacts API] Retreiving product info for $barcode');
+      }
+
       final result = await OpenFoodAPIClient.getProductV3(config);
+
+      if (kDebugMode) {
+        print('[OpenFoodFacts API] API response status: ${result.status}');
+      }
 
       if (result.status == ProductResultV3.statusSuccess) {
         _cache[barcode] = result.product;
