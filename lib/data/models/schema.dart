@@ -34,6 +34,10 @@ class AppDatabase extends _$AppDatabase {
     return driftDatabase(
       name: 'foodbank',
       native: DriftNativeOptions(),
+      web: DriftWebOptions(
+        sqlite3Wasm: Uri.parse('sqlite3.wasm'),
+        driftWorker: Uri.parse('drift_worker.dart.js'),
+      ),
     );
   }
 }
