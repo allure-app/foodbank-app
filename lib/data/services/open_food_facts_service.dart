@@ -46,6 +46,7 @@ class OpenFoodFactsService extends OpenFoodFactsServiceInterface {
 
       if (kDebugMode) {
         print('[OpenFoodFacts API] API response status: ${result.status}');
+        print('[OpenFoodFacts API] Message: ${result.toJson()}');
       }
 
       if (result.status == ProductResultV3.statusSuccess) {

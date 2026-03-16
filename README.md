@@ -18,3 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ## TODO:
 - Location (Shelf 1, Shelf 2)
+
+## Debugging on the phone
+`chrome://inspect`
